@@ -1,101 +1,83 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import SignupForm from './components/SignupForm';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="text-center">
+      <div className="max-w-xl pt-8 mx-auto mb-4 text-[28px] md:text-3xl">
+        Maybe{' '}
         <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          src="/icon-maybe-color.svg"
+          alt="Maybe Logo"
+          width={32}
+          height={32}
+          className="inline w-8 md:w-auto"
+        />{' '}
+        is a{' '}
+        <em className="relative">
+          <span className="border-b-2 border-gray-400 border-dotted">fully</span>
+          <sup>*</sup>
+          <span className="absolute w-40 md:w-64 text-xs text-left text-gray-400 left-2 -top-8 md:left-16 md:-top-7 -rotate-3">
+            <sup>*</sup>your finances are secure
+          </span>
+        </em>{' '}
+        open-source
+        <div className="inline-flex border rounded-md shadow-[0_1px_8px_0_rgba(0,0,0,0.04)] border-gray-200 scale-[0.8] md:scale-100 ml-2">
+          <Link href="https://github.com/maybe-finance/maybe" className="px-2 py-1.5 border-r shadow-[inset_0_-2px_5px_0_rgba(0,0,0,0.07)] bg-gray-100 rounded-l-md border-gray-200 flex items-center justify-center">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
+              src="/icon-github.svg"
+              alt="GitHub icon"
               width={20}
               height={20}
+              className="h-5 w-5"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </Link>
+          <span className="px-2 py-1.5 text-sm font-medium bg-white shadow-[inset_0_-2px_5px_0_rgba(0,0,0,0.07)] rounded-r-md">
+            GitHub
+          </span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        OS for your personal finances{' '}
+        <Image
+          src="/icon-chart.svg"
+          alt="Chart"
+          width={32}
+          height={32}
+          className="inline w-8 md:w-auto"
+        />{' '}
+        built by a small team{' '}
+        <Image
+          src="/icon-team.png"
+          alt="Maybe Team"
+          width={110}
+          height={36}
+          className="inline h-8 md:h-9"
+        />{' '}
+        alongside an incredible community{' '}
+        <Image
+          src="/icon-discord.svg"
+          alt="Discord"
+          width={32}
+          height={32}
+          className="inline w-8 md:w-auto"
+        />
+      </div>
+
+      <div className="mx-auto max-w-96" id="waitlist">
+        <SignupForm />
+      </div>
+
+      <div className="p-3 mx-auto my-10 bg-black/[0.02] rounded-3xl border border-black/1 shadow-[0px_0px_22.07px_0px_rgba(0,0,0,0.03)]">
+        <Image
+          src="/screenshot.png"
+          alt="Maybe Screenshot"
+          width={600}
+          height={400}
+          className="w-full border border-black/1 rounded-2xl shadow-[0_7.36px_7.36px_-3.68px_rgba(11,11,11,0.03)] shadow-[0_18.39px_22.07px_-3.68px_rgba(11,11,11,0.08)]"
+        />
+      </div>
     </div>
   );
-}
+};
+
+export default HomePage;
